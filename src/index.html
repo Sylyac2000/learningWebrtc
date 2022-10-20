@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning WebRTC - Chapter 2: Get User Media</title>
+    <link rel="stylesheet" href="build/application.css">
+</head>
+<body>
+    <div id="container">
+        <video id="yourvideo"></video>
+        <video id="othersvideo"></video>
+        <canvas></canvas>
+    </div>
+    <script src='../build/socket.io.js'></script>
+    <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
+    <script type="text/javascript" src="../build/application.js"></script>
+
+    <script>
+        var URL_SERVER = 'https://localhost:3000';
+        var socket = io.connect(URL_SERVER);
+  
+        socket.on('message', function(data) {
+          alert(data);
+        });
+      </script>
+</body>
+</html>
